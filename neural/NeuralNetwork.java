@@ -34,6 +34,7 @@ public class NeuralNetwork {
         byte[] buffer = new byte[(int)file.length()];
         FileInputStream in = new FileInputStream(file);
         in.read(buffer);
+        in.close();
 
         String raw = new String(buffer);
 
