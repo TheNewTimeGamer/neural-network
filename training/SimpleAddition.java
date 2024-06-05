@@ -6,8 +6,8 @@ public class SimpleAddition implements TrainingData {
     private float[] outputValues = new float[1];
 
     public void generate() {
-        inputValues[0] = (float) Math.random();
-        inputValues[1] = (float) Math.random();
+        inputValues[0] = (float) Math.random() * 1000;
+        inputValues[1] = (float) Math.random() * 1000;
 
         outputValues[0] = inputValues[0] + inputValues[1];
     }

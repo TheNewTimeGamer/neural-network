@@ -20,14 +20,14 @@ public class Main {
 
     public void loadExisitingNetwork() throws IOException {
         NeuralNetwork network = NeuralNetwork.loadFromFile(new File("test.nn"));
-        network.inputLayer.setValues(new float[]{12, 6});
+        network.inputLayer.setValues(new float[]{200, 22});
         float[] output = network.run();
-        System.out.println(output[0]);
+        System.out.println(Math.round(output[0]) + " | " + output[0]);
     }
 
     public void trainNetworks(int cycles) {
         System.out.println("Generating training data.");
-        TrainingData[] trainingData = new TrainingData[1024];
+        TrainingData[] trainingData = new TrainingData[2048];
         for(int i = 0; i < trainingData.length; i++){
             trainingData[i] = new SimpleAddition();
             trainingData[i].generate();
@@ -40,7 +40,7 @@ public class Main {
 
         for(int i = 0; i < networks.length; i++) {
             networks[i] = new NeuralNetwork(2, 1);
-            networks[i].addLayer(16);
+            networks[i].addLayer(4);
             networks[i].build();
         }
 
